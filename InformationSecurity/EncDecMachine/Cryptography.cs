@@ -29,7 +29,7 @@ namespace EncDecMachine
 
             this.keyTextBox.Text = defaultKey;
 
-            logger.addLog("default key " + defaultKey + " is generated.");
+            logger.addLog("default key (" + defaultKey + ") generated.");
         }
 
         abstract public void encrypt();

@@ -72,7 +72,14 @@ namespace EncDecMachine
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                crypto.decrypt();
+            }
+            catch (Exception ex)
+            {
+                logger.addLog("No Cryptography Available");
+            }
         }
     }
 }

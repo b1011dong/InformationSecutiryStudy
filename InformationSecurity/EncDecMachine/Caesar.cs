@@ -50,6 +50,8 @@ namespace EncDecMachine
             this.setCipherText(ciphertext.ToUpper());
 
             this.printCiphertext();
+
+            logger.addLog("Encryption complete.");
         }
 
         public override void decrypt()
@@ -64,14 +66,16 @@ namespace EncDecMachine
             for (int i = 0; i < ciphertext.Length; i++)
             {
                 if ('a' <= ciphertext[i] && ciphertext[i] <= 'z')
-                    plaintext += ((char)()).ToString();
+                    plaintext += ((char)(ciphertext[i] - key < 'a' ? 'z' - ('a' - (ciphertext[i] - key) - 1) : ciphertext[i] - key)).ToString();
                 else
                     plaintext += ciphertext[i].ToString();
             }
 
-            this.setPlainText(plaintext.ToUpper());
+            this.setPlainText(plaintext.ToLower());
 
-            this.printCiphertext();
+            this.printPlaintext();
+
+            logger.addLog("Decryption complete.");
         }
     }
 }
