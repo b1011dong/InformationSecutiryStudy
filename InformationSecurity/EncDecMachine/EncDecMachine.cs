@@ -68,7 +68,7 @@ namespace EncDecMachine
         {
             if (isFileCrypto == true)
             {
-
+                logger.addLog("File crypto is not yet implemented");
             }
             else
             {
@@ -87,7 +87,7 @@ namespace EncDecMachine
         {
             if (isFileCrypto == true)
             {
-
+                logger.addLog("File crypto is not yet implemented");
             }
             else
             {
