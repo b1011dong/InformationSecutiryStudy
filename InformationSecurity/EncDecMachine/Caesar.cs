@@ -11,7 +11,8 @@ namespace EncDecMachine
     {
         int key;
 
-        public Caesar(Logger logger, TextBox plainTextBox, TextBox cipherTextBox, TextBox keyTextBox) : base(logger, plainTextBox, cipherTextBox, keyTextBox, 3.ToString())
+        public Caesar(Logger logger, TextBox plainTextBox, TextBox cipherTextBox, TextBox keyTextBox, string defaultKey)
+            : base(logger, plainTextBox, cipherTextBox, keyTextBox, defaultKey)
         {
             this.setPlainText("caesar cryptography example: no upper case");
             logger.addLog("- key for n shift.");

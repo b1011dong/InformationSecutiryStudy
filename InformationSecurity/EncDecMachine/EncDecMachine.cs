@@ -15,6 +15,7 @@ namespace EncDecMachine
     {
         private Cryptography crypto;
         private Logger logger;
+        private bool isFileCrypto;
 
         public EncDecMachine()
         {
@@ -52,34 +53,92 @@ namespace EncDecMachine
         private void cryptoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             logger.addLog(this.cryptoComboBox.SelectedItem.ToString() + " Mode");
+            
             if(this.cryptoComboBox.SelectedItem.ToString().Contains("Caesar"))
             {
-                this.crypto = new Caesar(this.logger, this.painTextBox, this.cipherTextBox, this.keyTextBox);
+                this.crypto = new Caesar(this.logger, this.plainTextBox, this.cipherTextBox, this.keyTextBox, "3");
+            }
+            else if (this.cryptoComboBox.SelectedItem.ToString().Contains("TEA"))
+            {
+                this.crypto = new TEA(this.logger, this.plainTextBox, this.cipherTextBox, this.keyTextBox, "00112233445566778899AABBCCDDEEFF");
             }
         }
 
         private void encryptButton_Click(object sender, EventArgs e)
         {
-            try
+            if (isFileCrypto == true)
             {
-                crypto.encrypt();
+
             }
-            catch(Exception ex)
+            else
             {
-                logger.addLog("No Cryptography Available");
+                try
+                {
+                    crypto.encrypt();
+                }
+                catch (Exception ex)
+                {
+                    logger.addLog("No Cryptography Available");
+                }
             }
         }
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
-            try
+            if (isFileCrypto == true)
             {
-                crypto.decrypt();
+
             }
-            catch (Exception ex)
+            else
             {
-                logger.addLog("No Cryptography Available");
+                try
+                {
+                    crypto.decrypt();
+                }
+                catch (Exception ex)
+                {
+                    logger.addLog("No Cryptography Available");
+                }
             }
+        }
+
+        private void loadFileForEncryptionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = fileDialog.FileName;
+                string filename = fileDialog.SafeFileName;
+
+                this.plainTextBox.Text = path;
+                this.plainTextBox.Enabled = false;
+                this.cipherTextBox.Enabled = false;
+                this.isFileCrypto = true;
+            }
+        }
+
+        private void loadFileForDecryptionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = fileDialog.FileName;
+                string filename = fileDialog.SafeFileName;
+
+                this.cipherTextBox.Text = path;
+                this.plainTextBox.Enabled = false;
+                this.cipherTextBox.Enabled = false;
+                this.isFileCrypto = true;
+            }
+        }
+
+        private void cancelFileCryptoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.plainTextBox.Enabled = true;
+            this.cipherTextBox.Enabled = true;
+            this.isFileCrypto = false;
         }
     }
 }

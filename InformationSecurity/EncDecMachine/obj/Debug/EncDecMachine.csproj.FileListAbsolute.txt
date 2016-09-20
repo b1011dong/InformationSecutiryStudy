@@ -16,3 +16,12 @@ D:\Data Backup\Projects\GitEtc\InformationSecutiryStudy\InformationSecurity\EncD
 D:\Data Backup\Projects\GitEtc\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.EncDecMachine.resources
 D:\Data Backup\Projects\GitEtc\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.Properties.Resources.resources
 D:\Data Backup\Projects\GitEtc\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.csproj.GenerateResource.Cache
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\bin\Debug\EncDecMachine.exe.config
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.csprojResolveAssemblyReference.cache
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.EncDecMachine.resources
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.Properties.Resources.resources
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.csproj.GenerateResource.Cache
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\bin\Debug\EncDecMachine.exe
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\bin\Debug\EncDecMachine.pdb
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.exe
+D:\PDW\Git\InformationSecutiryStudy\InformationSecurity\EncDecMachine\obj\Debug\EncDecMachine.pdb
